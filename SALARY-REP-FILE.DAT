@@ -1,0 +1,160 @@
+                                           SALARY REPORT
+                                                                                                   PAGE NO:   1
+
+
+
+
+         DATE          BRCH-NAME     DEPT-NAME     EMP-NAME      SALARY
+
+         01/01/2022    HTC-CHN       DEVELOPER     KOHLI         20000
+         01/01/2022    HTC-CHN       DEVELOPER     MADHANA       30000
+         01/01/2022    HTC-CHN       DEVELOPER     DINESH        20000
+         01/01/2022    HTC-CHN       DEVELOPER     MAHESH        30000
+
+                        THE SALARY AMOUNT PAID FOR DEPARTMENT     DEVELOPER    IS    100000  IN THE BRANCH       HTC-CHN     ON DATE     01/01/2022
+
+
+         01/01/2022    HTC-CHN       TESTER        SUNDAR        20000
+         01/01/2022    HTC-CHN       TESTER        MAXWELL       30000
+         01/01/2022    HTC-CHN       TESTER        PRABHAS       20000
+         01/01/2022    HTC-CHN       TESTER        SURESH        30000
+
+                        THE SALARY AMOUNT PAID FOR DEPARTMENT     TESTER       IS    100000  IN THE BRANCH       HTC-CHN     ON DATE     01/01/2022
+
+
+         01/01/2022    HTC-CHN       ADMIN         RAHUL         20000
+         01/01/2022    HTC-CHN       ADMIN         MAYANK        30000
+         01/01/2022    HTC-CHN       ADMIN         PUJARA        20000
+         01/01/2022    HTC-CHN       ADMIN         RAHANE        30000
+
+                        THE SALARY AMOUNT PAID FOR DEPARTMENT     ADMIN        IS    100000  IN THE BRANCH       HTC-CHN     ON DATE     01/01/2022
+
+                   THE TOTAL SALARY AMOUNT PAID FOR BRANCH   HTC-CHN      IS    300000  ON DATE   01/01/2022
+
+
+
+         DATE          BRCH-NAME     DEPT-NAME     EMP-NAME      SALARY
+
+         01/01/2022    HTC-HYD       DEVELOPER     SRADHA        20000
+         01/01/2022    HTC-HYD       DEVELOPER     KIRTHI        30000
+         01/01/2022    HTC-HYD       DEVELOPER     SAMANTHA      20000
+
+                                                                                                   PAGE NO:   2
+
+
+
+         01/01/2022    HTC-HYD       DEVELOPER     NIVEDHA       30000
+
+                        THE SALARY AMOUNT PAID FOR DEPARTMENT     DEVELOPER    IS    100000  IN THE BRANCH       HTC-HYD     ON DATE     01/01/2022
+
+
+         01/01/2022    HTC-HYD       TESTER        FINCH         20000
+         01/01/2022    HTC-HYD       TESTER        KEVIN         30000
+         01/01/2022    HTC-HYD       TESTER        SMITH         20000
+         01/01/2022    HTC-HYD       TESTER        WARNER        30000
+
+                        THE SALARY AMOUNT PAID FOR DEPARTMENT     TESTER       IS    100000  IN THE BRANCH       HTC-HYD     ON DATE     01/01/2022
+
+
+         01/01/2022    HTC-HYD       ADMIN         BUTLER        20000
+         01/01/2022    HTC-HYD       ADMIN         ARCHER        30000
+         01/01/2022    HTC-HYD       ADMIN         PETERSON      20000
+         01/01/2022    HTC-HYD       ADMIN         BAIRSTOW      30000
+
+                        THE SALARY AMOUNT PAID FOR DEPARTMENT     ADMIN        IS    100000  IN THE BRANCH       HTC-HYD     ON DATE     01/01/2022
+
+                   THE TOTAL SALARY AMOUNT PAID FOR BRANCH   HTC-HYD      IS    300000  ON DATE   01/01/2022
+
+         THE TOTAL SALARY AMOUNT PAID  ON DATE          01/01/2022   IS      600000
+
+
+
+         DATE          BRCH-NAME     DEPT-NAME     EMP-NAME      SALARY
+
+         01/02/2022    HTC-CHN       DEVELOPER     KOHLI         20000
+         01/02/2022    HTC-CHN       DEVELOPER     MADHANA       30000
+         01/02/2022    HTC-CHN       DEVELOPER     DINESH        20000
+         01/02/2022    HTC-CHN       DEVELOPER     MAHESH        30000
+
+                        THE SALARY AMOUNT PAID FOR DEPARTMENT     DEVELOPER    IS    100000  IN THE BRANCH       HTC-CHN     ON DATE     01/02/2022
+
+
+                                                                                                   PAGE NO:   3
+
+
+
+         01/02/2022    HTC-CHN       TESTER        SUNDAR        20000
+         01/02/2022    HTC-CHN       TESTER        MAXWELL       30000
+         01/02/2022    HTC-CHN       TESTER        PRABHAS       20000
+         01/02/2022    HTC-CHN       TESTER        SURESH        30000
+
+                        THE SALARY AMOUNT PAID FOR DEPARTMENT     TESTER       IS    100000  IN THE BRANCH       HTC-CHN     ON DATE     01/02/2022
+
+
+         01/02/2022    HTC-CHN       ADMIN         RAHUL         20000
+         01/02/2022    HTC-CHN       ADMIN         MAYANK        30000
+         01/02/2022    HTC-CHN       ADMIN         PUJARA        20000
+         01/02/2022    HTC-CHN       ADMIN         RAHANE        30000
+
+                        THE SALARY AMOUNT PAID FOR DEPARTMENT     ADMIN        IS    100000  IN THE BRANCH       HTC-CHN     ON DATE     01/02/2022
+
+                   THE TOTAL SALARY AMOUNT PAID FOR BRANCH   HTC-CHN      IS    300000  ON DATE   01/02/2022
+
+
+
+         DATE          BRCH-NAME     DEPT-NAME     EMP-NAME      SALARY
+
+         01/02/2022    HTC-HYD       DEVELOPER     SRADHA        20000
+         01/02/2022    HTC-HYD       DEVELOPER     KIRTHI        30000
+         01/02/2022    HTC-HYD       DEVELOPER     SAMANTHA      20000
+         01/02/2022    HTC-HYD       DEVELOPER     NIVEDHA       30000
+
+                        THE SALARY AMOUNT PAID FOR DEPARTMENT     DEVELOPER    IS    100000  IN THE BRANCH       HTC-HYD     ON DATE     01/02/2022
+
+
+         01/02/2022    HTC-HYD       TESTER        FINCH         20000
+         01/02/2022    HTC-HYD       TESTER        KEVIN         30000
+         01/02/2022    HTC-HYD       TESTER        SMITH         20000
+         01/02/2022    HTC-HYD       TESTER        WARNER        30000
+
+                        THE SALARY AMOUNT PAID FOR DEPARTMENT     TESTER       IS    100000  IN THE BRANCH       HTC-HYD     ON DATE     01/02/2022
+
+                                                                                                   PAGE NO:   4
+
+
+
+         01/02/2022    HTC-HYD       ADMIN         BUTLER        20000
+         01/02/2022    HTC-HYD       ADMIN         ARCHER        30000
+         01/02/2022    HTC-HYD       ADMIN         PETERSON      20000
+         01/02/2022    HTC-HYD       ADMIN         BAIRSTOW      30000
+
+                        THE SALARY AMOUNT PAID FOR DEPARTMENT     ADMIN        IS    100000  IN THE BRANCH       HTC-HYD     ON DATE     01/02/2022
+
+                   THE TOTAL SALARY AMOUNT PAID FOR BRANCH   HTC-HYD      IS    300000  ON DATE   01/02/2022
+
+         THE TOTAL SALARY AMOUNT PAID  ON DATE          01/02/2022   IS      600000
+
+
+
+
+         THE TOTAL SALARY AMOUNT PAID TILL DATE IS                 1200000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

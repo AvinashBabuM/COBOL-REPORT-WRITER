@@ -1,0 +1,132 @@
+       program-id. BRN_DEPT_SAL as "com.microfocus.report_writer.BRN_DEPT_SAL".
+
+       ENVIRONMENT DIVISION.
+       INPUT-OUTPUT SECTION.
+       FILE-CONTROL.
+           SELECT SALARY-FILE ASSIGN TO "F:\amFAM\Report_writer\INPUT-OUTPUT-FILES\SALARY-PAYMENT-FILE.DAT"
+           ORGANIZATION IS LINE SEQUENTIAL
+           ACCESS MODE IS SEQUENTIAL.
+           
+           SELECT SALARY-REP-FILE ASSIGN TO "F:\amFAM\Report_writer\INPUT-OUTPUT-FILES\SALARY-REP-FILE.DAT"
+           ORGANIZATION IS LINE SEQUENTIAL
+           ACCESS MODE IS SEQUENTIAL.
+
+       DATA DIVISION.
+       FILE SECTION.
+       FD SALARY-FILE.
+       01 COVID-REC.
+          05 SALARY-ON-DATE  PIC X(10).
+          05 BRANCH-NAME     PIC X(10).
+          05 DEPT-NAME       PIC X(10).
+          05 EMP-NAME        PIC X(10).
+          05 SALARY          PIC 9(5).
+          05 FILLER          PIC X(35) VALUE SPACES.
+          
+       FD SALARY-REP-FILE
+          REPORT IS SALARY-REPORT.
+           
+       WORKING-STORAGE SECTION.
+       
+       01  WS-SALARY-FILE-EOF PIC 9(1) VALUE 0.
+
+       01  WS-TEMP-DATE          PIC X(10).
+       
+       REPORT SECTION.
+       RD SALARY-REPORT
+          CONTROLS ARE FINAL,SALARY-ON-DATE,BRANCH-NAME,DEPT-NAME
+          PAGE 40 LINES
+          FIRST DETAIL 6.
+       
+       01 TYPE REPORT HEADING.
+          02 LINE IS 1.
+             10 COLUMN 44 PIC X(21) VALUE 'SALARY REPORT'.
+        
+       01 TYPE PAGE HEADING.
+          05 LINE IS 2.
+             10 COLUMN 100 PIC X(08) VALUE 'PAGE NO:'.
+             10 COLUMN 109 PIC ZZZ   VALUE PAGE-COUNTER.
+       
+       01 FIELD-HEADER
+          LINE NUMBER IS PLUS 1
+          NEXT GROUP IS PLUS 1
+          TYPE IS CONTROL HEADING BRANCH-NAME.
+          05 LINE PLUS 1.
+             10 COLUMN 10 PIC X(10) VALUE 'DATE'.
+             10 COLUMN 24 PIC X(10) VALUE 'BRCH-NAME'.
+             10 COLUMN 38 PIC X(10) VALUE 'DEPT-NAME'.
+             10 COLUMN 52 PIC X(10) VALUE 'EMP-NAME'.
+             10 COLUMN 66 PIC X(12) VALUE 'SALARY'.
+         
+       01 DETAIL-LINE TYPE IS DETAIL LINE PLUS 1.
+             10 COLUMN 10 PIC X(10)  SOURCE SALARY-ON-DATE.
+             10 COLUMN 24 PIC X(10)  SOURCE BRANCH-NAME.
+             10 COLUMN 38 PIC X(10)  SOURCE DEPT-NAME.
+             10 COLUMN 52 PIC X(10)  SOURCE EMP-NAME.
+             10 COLUMN 66 PIC ZZZZZ  SOURCE SALARY.
+             
+      01 DEPTGRP
+          TYPE IS CONTROL FOOTING DEPT-NAME NEXT GROUP PLUS 2.
+          02 LINE PLUS 2.
+             03 COLUMN 25 PIC X(40)        VALUE 'THE SALARY AMOUNT PAID FOR DEPARTMENT '.
+             03 COLUMN 67 PIC X(10)        SOURCE DEPT-NAME.
+             03 COLUMN 79 PIC X(4)         VALUE " IS  ".
+             03 COLUMN 85 PIC ZZZZZZZ      SUM SALARY. 
+             03 COLUMN 94 PIC X(16)        VALUE "IN THE BRANCH ".
+             03 COLUMN 114 PIC X(10)       SOURCE BRANCH-NAME.
+             03 COLUMN 126 PIC X(10)       VALUE 'ON DATE '.
+             03 COLUMN 138 PIC X(10)       SOURCE SALARY-ON-DATE.
+       
+       01 BRANCHGRP
+          TYPE IS CONTROL FOOTING BRANCH-NAME NEXT GROUP PLUS 2.
+          02 LINE PLUS 2.
+             03 COLUMN 20 PIC X(40)        VALUE 'THE TOTAL SALARY AMOUNT PAID FOR BRANCH '.
+             03 COLUMN 62 PIC X(10)        SOURCE BRANCH-NAME.
+             03 COLUMN 74 PIC X(3)         VALUE " IS  ".
+             03 COLUMN 79 PIC ZZZZZZZZ     SUM SALARY. 
+             03 COLUMN 89 PIC X(10)        VALUE 'ON DATE '.
+             03 COLUMN 99 PIC X(10)        SOURCE SALARY-ON-DATE.
+             
+       01 DATEGRP
+          TYPE IS CONTROL FOOTING SALARY-ON-DATE NEXT GROUP PLUS 2.
+          02 LINE PLUS 2.
+             03 COLUMN 10 PIC X(45)        VALUE 'THE TOTAL SALARY AMOUNT PAID  ON DATE '.
+             03 COLUMN 57 PIC X(10)        SOURCE SALARY-ON-DATE.
+             03 COLUMN 69 PIC X(3)         VALUE ' IS '.
+             03 COLUMN 75 PIC ZZZZZZZZZ    SUM SALARY.
+             
+       01 TYPE CONTROL FOOTING FINAL LINE PLUS 5.
+         03 COLUMN 10 PIC X(50)       VALUE 'THE TOTAL SALARY AMOUNT PAID TILL DATE IS  '.
+         03 COLUMN 66 PIC ZZZZZZZZZ   SUM SALARY.
+         
+          
+       PROCEDURE DIVISION.
+       OPEN INPUT SALARY-FILE, OUTPUT SALARY-REP-FILE.
+       INITIATE SALARY-REPORT.
+       PERFORM 1000-READ-PARA THRU 1000-EXIT-PARA
+               UNTIL  WS-SALARY-FILE-EOF=1.
+       TERMINATE SALARY-REPORT.
+       CLOSE SALARY-FILE,SALARY-REP-FILE.
+       GOBACK.
+     
+       1000-READ-PARA.
+           READ SALARY-FILE
+               AT END
+                   MOVE 1 TO WS-SALARY-FILE-EOF
+               NOT AT END
+                   IF SALARY-ON-DATE IS NOT EQUAL TO WS-TEMP-DATE THEN 
+                       MOVE SALARY-ON-DATE TO WS-TEMP-DATE
+                       PERFORM 2000-GEN-PARA THRU 2000-EXIT
+                   ELSE
+                       MOVE SALARY-ON-DATE TO WS-TEMP-DATE
+                       PERFORM 2000-GEN-PARA THRU 2000-EXIT
+                   END-IF
+          END-READ.
+       1000-EXIT-PARA.
+           EXIT.
+       2000-GEN-PARA.
+           GENERATE DETAIL-LINE.
+       2000-EXIT.
+           EXIT.
+
+
+       end program BRN_DEPT_SAL.
